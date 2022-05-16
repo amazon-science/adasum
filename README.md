@@ -9,8 +9,8 @@ Citation:
         author = {Bražinskas, Arthur and Nallapati, Ramesh and Bansal, Mohit and Dreyer, Markus},
         title = {Efficient Few-Shot Fine-Tuning for Opinion Summarization},
         booktitle = {Findings of NAACL},
-        url = {https://arxiv.org/abs/2205.02170v2},
-	year = {2022}
+        url = {https://arxiv.org/abs/2205.02170v2},	
+        year = {2022}
     }
 
 
