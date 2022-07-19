@@ -7,12 +7,12 @@ We will also **soon** provide checkpoints for each model. These checkpoints shou
 
 ## 1. Preparation
 
-### 1.2. BART
+### 1.1. BART
 
 The models rely on BART -- a pre-trained language model. The initialization with BART is only needed to train models from scratch. Please download it from [here](https://dl.fbaipublicfiles.com/fairseq/models/bart.large.tar.gz) and unzip to `../saved/bart`.
 We also provide checkpoints for our trained models. 
 
-### 1.3. BPEs
+### 1.2. BPEs
 
 Download the artifacts necessary for data pre-processing. Put all these artifacts to: `../data/misc`.
 
