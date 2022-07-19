@@ -5,7 +5,7 @@ This repository contains the main codebase for the corresponding [NAACL findings
 Further, we fine-tune the pre-trained adapters on a handful of summaries. This method yields state-of-the-art results in terms of ROUGE scores and reduces semantic mistakes in generated summaries. 
 
 
-### 1. Conda environment
+## 1. Conda environment
 
 In this project, we used conda for environments. To re-create the environment, use the command below.
 
@@ -19,7 +19,7 @@ Then, activate it:
 conda activate adasum
 ```
 
-### 2. FAIRSEQ
+## 2. FAIRSEQ
 
 The codebase relies on FAIRSEQ, which can be downloaded and installed in a parent folder as follows.
 
@@ -32,13 +32,13 @@ git reset --hard 81046fc
 pip install --editable ./
 ```
 
-Please make sure you use **the correct commit** to avoid incompatibility errors.  Also, set the global variable. 
+Please make sure you use **the correct commit** to avoid incompatibility issues.  Also, set the global variable. 
 
 ```
 export MKL_THREADING_LAYER=GNU
 ```
 
-### 3. Folder structure
+## 3. Folder structure
 
 The main codebase is stored at [adasum](adasum).
 
