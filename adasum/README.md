@@ -54,7 +54,7 @@ We provide bash scripts for pre-training. Please adjust hyper-parameters if need
 bash adasum/scripts/training/pretrain_adasum.sh
 ```
 
-**Checkpoints**: [Amazon](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/amazon/pre_trained/generic/checkpoint.pt) and [Yelp](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/yelp/pre_trained/generic/checkpoint.pt). 
+**Checkpoints**: [Amazon](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/amazon/pre_trained/generic/checkpoint.pt) and [Yelp](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/yelp/pre_trained/generic/checkpoint.pt). 
 
 
 #### Query-based summarizer (AdaQSum)
@@ -63,7 +63,7 @@ bash adasum/scripts/training/pretrain_adasum.sh
 bash adasum/scripts/training/pretrain_adaqsum.sh
 ```
 
-**Checkpoints**: [Amazon](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/amazon/pre_trained/query/checkpoint.pt) and [Yelp](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/yelp/pre_trained/query/checkpoint.pt). 
+**Checkpoints**: [Amazon](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/amazon/pre_trained/query/checkpoint.pt) and [Yelp](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/yelp/pre_trained/query/checkpoint.pt). 
 
 
 ### 3.2. Fine-tuning
@@ -94,7 +94,7 @@ python adasum/train.py --data=../data/amazon/gold/generic --user-dir=adasum \
 --ddp-backend=no_c10d --save-interval=5 --batch-size=3 --adapter-hidden-dim=215
 ```
 
-**Checkpoints**: [Amazon](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/amazon/fine_tuned/generic/checkpoint.pt) and [Yelp](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/yelp/generic/checkpoint.pt). 
+**Checkpoints**: [Amazon](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/amazon/fine_tuned/generic/checkpoint.pt) and [Yelp](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/yelp/fine_tuned/generic/checkpoint.pt). 
 **Outputs**: [Amazon](../artifacts/amazon/fine_tuned/generic/output) and [Yelp](../artifacts/yelp/fine_tuned/generic/output).
 
 
@@ -119,7 +119,7 @@ python adasum/train.py --data=../data/amazon/gold/query_oracle --user-dir=adasum
 
 Please note that we are use aspect keywords extracted from gold summaries in the fine tuning phase. 
 
-**Checkpoints**: [Amazon](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/amazon/fine_tuned/query/checkpoint.pt) and [Yelp](https://abrazinskas.s3.eu-west-1.amazonaws.com/downloads/projects/adasum/artifacts/yelp/fine_tuned/query/checkpoint.pt). 
+**Checkpoints**: [Amazon](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/amazon/fine_tuned/query/checkpoint.pt) and [Yelp](https://d340kc38a3baxa.cloudfront.net/adasum/artifacts/yelp/fine_tuned/query/checkpoint.pt). 
 **Outputs**: [Amazon](../artifacts/amazon/fine_tuned/query/output_freq) and [Yelp](../artifacts/yelp/fine_tuned/query/output_freq).
 
 ### 3.3. Summary generation
