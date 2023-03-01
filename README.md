@@ -1,5 +1,4 @@
 # Few-shot Fine-tuning for Opinion Summarization
-![ILCC Amazon UNC](img/banner.png)
 
 This repository contains the main codebase for the corresponding [NAACL findings paper](https://aclanthology.org/2022.findings-naacl.113/). In this work, we explored in-domain information storage to adapters by pre-training them on customer reviews via the leave-one-out objective.
 Further, we fine-tune the pre-trained adapters on a handful of summaries. This method yields state-of-the-art results in terms of ROUGE scores and reduces semantic mistakes in generated summaries. 
