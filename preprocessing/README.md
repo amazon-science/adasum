@@ -6,7 +6,7 @@ This folder contains scripts to pre-process data (e.g., to create a synthetic da
 ## 1. Synthetic datasets
 
 The raw unannotated datasets should be downloaded and stored to the `../data` folder. Please use the following links -- [Amazon](https://jmcauley.ucsd.edu/data/amazon) and [Yelp](https://www.yelp.com/dataset).
-Alternatively, one could download the reviews that were used in [FewSum](https://github.com/abrazinskas/FewSum) use pre-process them further. The review counts will not be identical as in the paper but the final results should be similar.
+Alternatively, one could download the reviews that were used in [FewSum](https://github.com/abrazinskas/FewSum). The review counts will not be identical as in the paper but the final results should be similar.
 
 ### 1.1. Leave-one-out
 
