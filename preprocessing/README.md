@@ -5,7 +5,8 @@ This folder contains scripts to pre-process data (e.g., to create a synthetic da
 
 ## 1. Synthetic datasets
 
-The raw unannotated datasets should be downloaded and stored to the `../data` folder. Please use the following links -- [Amazon](https://jmcauley.ucsd.edu/data/amazon) and [Yelp](https://www.yelp.com/dataset). 
+The raw unannotated datasets should be downloaded and stored to the `../data` folder. Please use the following links -- [Amazon](https://jmcauley.ucsd.edu/data/amazon) and [Yelp](https://www.yelp.com/dataset).
+Alternatively, one could download the reviews that were used in [FewSum](https://github.com/abrazinskas/FewSum). The review counts will not be identical as in the paper but the final results should be similar.
 
 ### 1.1. Leave-one-out
 
@@ -23,6 +24,9 @@ python preprocessing/leave_one_out.py \
 --src-rev-max-len=120 --tgt-rev-min-len=20 --tgt-rev-max-len=120 \
 --dataset=amazon --percentile=95 --measure=f
 ``` 
+
+If the FewSum reviews are used, then pass the zip file's path as follows:
+```--input-file-paths=../data/amazon/reviews/raw/fewsum_reviews.zip```
 
 If only generic summaries are of interest, please proceed to Sec 3.
 

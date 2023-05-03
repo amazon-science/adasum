@@ -182,7 +182,7 @@ def leave_one_out(input_file_paths, output_folder_path,
         logger.info(f"Percentile: {perc:.3f}")
         logger.info(f"Review count after filtering by percentile: "
                     f"{sum([len(v[SRC]) for v in coll.values()])}")
-    logger.info(f"Total entries: {len(coll)}")
+    logger.info(f"Total ASINs/businesses: {len(coll)}")
 
     # partitions based on shuffled ids
     entity_ids = list(coll.keys())
@@ -194,7 +194,6 @@ def leave_one_out(input_file_paths, output_folder_path,
                                                 test_part=0.00)
     for part_name, part_ent in zip([TRAIN, VALID, TEST],
                                    [train_ents, val_ents, test_ents]):
-
         logger.info(f"Partition: {part_name}")
         if len(part_ent) == 0:
             logger.info("Skipping the empty partition")
@@ -202,8 +201,6 @@ def leave_one_out(input_file_paths, output_folder_path,
         id_file_path = os.path.join(output_folder_path, f'{part_name}.id')
         src_file_path = os.path.join(output_folder_path, f'{part_name}.source')
         tgt_file_path = os.path.join(output_folder_path, f'{part_name}.target')
-        src_rating_file_path = os.path.join(output_folder_path, f'{part_name}.source.rating')
-        tgt_rating_file_path = os.path.join(output_folder_path, f'{part_name}.target.rating')
 
         # creating leave-one-out pairs for each partition
         part_coll = {a: coll[a] for a in part_ent}
@@ -215,31 +212,22 @@ def leave_one_out(input_file_paths, output_folder_path,
         id_file = open(id_file_path, encoding='utf-8', mode='w')
         src_file = open(src_file_path, encoding='utf-8', mode='w')
         tgt_file = open(tgt_file_path, encoding='utf-8', mode='w')
-        src_rating_file = open(src_rating_file_path, encoding='utf-8', mode='w')
-        tgt_rating_file = open(tgt_rating_file_path, encoding='utf-8', mode='w')
 
         tgt_count = 0
         for _id, _pairs in pairs.items():
             for _src, _tgt in _pairs:
                 tgt_count += 1
                 _src_str = f'{SEQ_SEP} '.join([_s[REVIEW_TEXT] for _s in _src])
-                _src_rating = f'{SEQ_SEP} '.join(
-                    [str(_s[OVERALL]) for _s in _src])
-                _tgt_rating = str(_tgt[OVERALL])
 
                 id_file.write(_id.strip() + "\n")
                 src_file.write(_src_str.strip() + "\n")
                 tgt_file.write(_tgt[REVIEW_TEXT].strip() + "\n")
-                src_rating_file.write(_src_rating + "\n")
-                tgt_rating_file.write(_tgt_rating + "\n")
         id_file.close()
         src_file.close()
         tgt_file.close()
-        src_rating_file.close()
-        tgt_rating_file.close()
 
         logger.info(f"Wrote: {tgt_count} tgts")
-        logger.info(f"Wrote: {len(part_ent)} entities \n")
+        logger.info(f"Wrote: {len(part_ent)} ASINs/businesses \n")
 
 
 if __name__ == '__main__':
